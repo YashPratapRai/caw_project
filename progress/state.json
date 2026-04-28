@@ -1,0 +1,10 @@
+{
+  "bootcamp": {
+    "product_scenario": "b2b_multi_tenant"
+  },
+  "decisions": {
+    "module_01": {
+      "project_layout": "monorepo"
+    }
+  }
+}
