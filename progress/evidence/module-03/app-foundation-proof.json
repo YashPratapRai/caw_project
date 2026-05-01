@@ -1,4 +1,5 @@
 {
+  "type": "proof",
   "module": 3,
   "artifact": "app-foundation",
   "evidence": [
@@ -16,7 +17,6 @@
       },
       "response": {
         "status": 201,
-        "code": "NuGSxgdH",
         "short_url": "http://localhost:3000/r/NuGSxgdH"
       }
     },
@@ -30,6 +30,21 @@
         "status": 302,
         "location": "https://example.com/"
       }
+    },
+    {
+      "action": "health_check",
+      "request": {
+        "method": "GET",
+        "path": "/health"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "status": "ok",
+          "db": "ok"
+        }
+      }
     }
-  ]
+  ],
+  "result": "pass"
 }
