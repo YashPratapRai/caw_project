@@ -1,8 +1,0 @@
-# Create link (multi-tenant header)
-curl -X POST http://localhost:3000/links \
-  -H "Content-Type: application/json" \
-  -H "x-user-id: test-user-1" \
-  -d "{\"long_url\":\"https://example.com\"}"
-
-# Redirect (expect 302)
-curl -i http://localhost:3000/r/NuGSxgdH
