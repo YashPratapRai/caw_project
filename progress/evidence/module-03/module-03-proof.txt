@@ -1,13 +1,9 @@
-POST /links (with x-user-id=test-user-1):
+MODULE_03_PROOF
 
-id: cmomtvheh003dcdloflmy5bbs
-code: NuGSxgdH
-short_url: http://localhost:3000/r/NuGSxgdH
-long_url: https://example.com/
-created_by: test-user-1
+APP_FOUNDATION: PRESENT
 
-GET /r/NuGSxgdH response:
+CREATE_LINK: 201
+REDIRECT: 302
+HEALTH: 200
 
-StatusCode: 302
-Location: https://example.com/
-x-request-id present in headers
+STATUS: PASS
