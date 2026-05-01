@@ -1,0 +1,430 @@
+{
+  "summary": {
+    "code": "H6Nb7jTs",
+    "client_ip": "203.0.113.77",
+    "first_attempts": [
+      {
+        "attempt": 1,
+        "status": 302,
+        "retryAfter": null,
+        "location": "https://example.com/rate-limit-proof"
+      },
+      {
+        "attempt": 2,
+        "status": 302,
+        "retryAfter": null,
+        "location": "https://example.com/rate-limit-proof"
+      },
+      {
+        "attempt": 3,
+        "status": 302,
+        "retryAfter": null,
+        "location": "https://example.com/rate-limit-proof"
+      }
+    ],
+    "first_rate_limited_attempt": {
+      "attempt": 61,
+      "status": 429,
+      "retryAfter": "60",
+      "location": null
+    },
+    "last_attempt": {
+      "attempt": 65,
+      "status": 429,
+      "retryAfter": "60",
+      "location": null
+    }
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 2,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 3,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 4,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 5,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 6,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 7,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 8,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 9,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 10,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 11,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 12,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 13,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 14,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 15,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 16,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 17,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 18,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 19,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 20,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 21,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 22,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 23,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 24,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 25,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 26,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 27,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 28,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 29,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 30,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 31,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 32,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 33,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 34,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 35,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 36,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 37,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 38,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 39,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 40,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 41,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 42,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 43,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 44,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 45,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 46,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 47,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 48,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 49,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 50,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 51,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 52,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 53,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 54,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 55,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 56,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 57,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 58,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 59,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 60,
+      "status": 302,
+      "retryAfter": null,
+      "location": "https://example.com/rate-limit-proof"
+    },
+    {
+      "attempt": 61,
+      "status": 429,
+      "retryAfter": "60",
+      "location": null
+    },
+    {
+      "attempt": 62,
+      "status": 429,
+      "retryAfter": "60",
+      "location": null
+    },
+    {
+      "attempt": 63,
+      "status": 429,
+      "retryAfter": "60",
+      "location": null
+    },
+    {
+      "attempt": 64,
+      "status": 429,
+      "retryAfter": "60",
+      "location": null
+    },
+    {
+      "attempt": 65,
+      "status": 429,
+      "retryAfter": "60",
+      "location": null
+    }
+  ]
+}

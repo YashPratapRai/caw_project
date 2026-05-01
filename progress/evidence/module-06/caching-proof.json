@@ -1,0 +1,50 @@
+{
+  "code": "QHBt5zBd",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": 302,
+      "request_id": "296e7b7e-39aa-470e-aa72-19382246e1d5",
+      "location": "https://example.com/cache-proof"
+    },
+    {
+      "attempt": 2,
+      "status": 302,
+      "request_id": "7857c81a-dcd5-4ce5-93ee-86bc9b336a7d",
+      "location": "https://example.com/cache-proof"
+    },
+    {
+      "attempt": 3,
+      "status": 302,
+      "request_id": "07bc46c8-c0e8-4b51-9d2f-a2ec70a88098",
+      "location": "https://example.com/cache-proof"
+    }
+  ],
+  "cache_logs": [
+    {
+      "timestamp": "2026-05-01T11:47:02.087Z",
+      "level": "info",
+      "message": "CACHE_MISS",
+      "code": "QHBt5zBd"
+    },
+    {
+      "timestamp": "2026-05-01T11:47:02.110Z",
+      "level": "info",
+      "message": "CACHE_HIT",
+      "code": "QHBt5zBd"
+    },
+    {
+      "timestamp": "2026-05-01T11:47:02.114Z",
+      "level": "info",
+      "message": "CACHE_HIT",
+      "code": "QHBt5zBd"
+    }
+  ],
+  "metrics": {
+    "total_requests": 6,
+    "total_redirects": 3,
+    "rate_limited_requests": 0,
+    "cache_hits": 2,
+    "cache_misses": 1
+  }
+}

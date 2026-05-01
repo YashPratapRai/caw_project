@@ -1,0 +1,13 @@
+{
+  "code": "_oyo3LYK",
+  "longUrl": "https://example.com/path?q=1",
+  "clickEventCount": 1,
+  "latestClickEvent": {
+    "id": "cmokf886o0002cd7wyrzqlq0w",
+    "linkId": "cmokf87pm0000cd7wu270t1n9",
+    "clickedAt": "2026-04-29T19:01:27.792Z",
+    "userAgent": "Module3Verifier/1.0",
+    "referrer": "https://dashboard.example.test/",
+    "ipHash": "c8afa217ef985630696d03d87ecd2ef83237b13cfae0cd16901c2d6ddc2a1038"
+  }
+}

@@ -1,0 +1,16 @@
+POST /links → 201 Created
+Request Header: x-user-id=test-user-1
+Response:
+short_url: http://localhost:3000/r/NuGSxgdH
+
+GET /r/NuGSxgdH → 302 Found
+Redirects to: https://example.com/
+
+GET /health → 200 OK
+Response:
+status: ok
+db: ok
+redis: unavailable
+
+Conclusion:
+Core API and redirect system working correctly.

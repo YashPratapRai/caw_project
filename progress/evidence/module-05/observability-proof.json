@@ -1,0 +1,285 @@
+{
+  "created_link": {
+    "status": 201,
+    "headers": {
+      "connection": "keep-alive",
+      "content-length": "256",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Fri, 01 May 2026 11:15:20 GMT",
+      "etag": "W/\"100-ZVg5cMxE+OuZ0QuOMXfemegAqRI\"",
+      "keep-alive": "timeout=5",
+      "x-powered-by": "Express",
+      "x-request-id": "fb45c394-71b0-4803-993f-4f76959d3c9a"
+    },
+    "body": {
+      "id": "cmomtgi000000cdlouxe9e79w",
+      "code": "wpr1t6BU",
+      "short_url": "http://localhost:3000/r/wpr1t6BU",
+      "long_url": "https://example.com/observability-proof",
+      "created_at": "2026-05-01T11:15:20.735Z",
+      "created_by": "tenant-observability",
+      "expires_at": null,
+      "tags": []
+    }
+  },
+  "redirect_summary": {
+    "first_three": [
+      {
+        "attempt": 1,
+        "status": 302,
+        "retry_after": null,
+        "request_id": "6d037be5-cfd3-4afa-bd88-9f38b512d06a"
+      },
+      {
+        "attempt": 2,
+        "status": 302,
+        "retry_after": null,
+        "request_id": "b4d60e8c-ff62-4d50-9363-a5ddf849c2ac"
+      },
+      {
+        "attempt": 3,
+        "status": 302,
+        "retry_after": null,
+        "request_id": "daffee73-af77-4f1b-a05c-676094425c80"
+      }
+    ],
+    "first_rate_limited": {
+      "attempt": 61,
+      "status": 429,
+      "retry_after": "60",
+      "request_id": "818f87a4-7bba-46f0-9f1a-5fcc69631d10"
+    },
+    "last_attempt": {
+      "attempt": 65,
+      "status": 429,
+      "retry_after": "60",
+      "request_id": "7f682ca9-db7b-447b-bb0e-e12c5392d1b4"
+    }
+  },
+  "missing_header_error": {
+    "status": 400,
+    "headers": {
+      "connection": "keep-alive",
+      "content-length": "106",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Fri, 01 May 2026 11:15:20 GMT",
+      "etag": "W/\"6a-h9SoOSIIMBTemWMYQ9526VjEjyE\"",
+      "keep-alive": "timeout=5",
+      "x-powered-by": "Express",
+      "x-request-id": "eb62aff3-7419-426b-81ed-8e967071dce1"
+    },
+    "body": {
+      "error": "x-user-id header is required.",
+      "request_id": "eb62aff3-7419-426b-81ed-8e967071dce1",
+      "status": 400
+    }
+  },
+  "not_found_error": {
+    "status": 404,
+    "headers": {
+      "connection": "keep-alive",
+      "content-length": "96",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Fri, 01 May 2026 11:15:21 GMT",
+      "etag": "W/\"60-ec4h1/MwscClnMCRMoyVu2P82eo\"",
+      "keep-alive": "timeout=5",
+      "x-powered-by": "Express",
+      "x-request-id": "31e1de66-56bc-4fa0-9ff4-a5db5816f5d9"
+    },
+    "body": {
+      "error": "Link was not found.",
+      "request_id": "31e1de66-56bc-4fa0-9ff4-a5db5816f5d9",
+      "status": 404
+    }
+  },
+  "health": {
+    "status": 200,
+    "headers": {
+      "connection": "keep-alive",
+      "content-length": "70",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Fri, 01 May 2026 11:15:21 GMT",
+      "etag": "W/\"46-BuuSXq54ByTygiRmPLo6b/rIqaE\"",
+      "keep-alive": "timeout=5",
+      "x-powered-by": "Express",
+      "x-request-id": "ea35dcbd-7b07-431f-b330-2981dbe43831"
+    },
+    "body": {
+      "status": "degraded",
+      "dependencies": {
+        "db": "ok",
+        "redis": "unavailable"
+      }
+    }
+  },
+  "metrics": {
+    "status": 200,
+    "headers": {
+      "connection": "keep-alive",
+      "content-length": "68",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Fri, 01 May 2026 11:15:21 GMT",
+      "etag": "W/\"44-oRDdPYd9t4tOOJxETrtj7Dswd7w\"",
+      "keep-alive": "timeout=5",
+      "x-powered-by": "Express",
+      "x-request-id": "e62ba9c2-da58-4190-99e4-b348ee8f2efd"
+    },
+    "body": {
+      "total_requests": 71,
+      "total_redirects": 60,
+      "rate_limited_requests": 5
+    }
+  },
+  "sample_logs": [
+    {
+      "timestamp": "2026-05-01T11:15:20.990Z",
+      "level": "info",
+      "message": "request.completed",
+      "request_id": "508a9759-fb80-4c3a-acd1-46ad05b599f5",
+      "method": "GET",
+      "path": "/r/wpr1t6BU",
+      "status_code": 302,
+      "response_time_ms": 1.78,
+      "user_id": null
+    },
+    {
+      "timestamp": "2026-05-01T11:15:20.991Z",
+      "level": "warn",
+      "message": "redirect.rate_limited",
+      "client_ip": "198.51.100.45",
+      "retry_after_seconds": 60,
+      "path": "/r/wpr1t6BU"
+    },
+    {
+      "timestamp": "2026-05-01T11:15:20.992Z",
+      "level": "info",
+      "message": "request.completed",
+      "request_id": "818f87a4-7bba-46f0-9f1a-5fcc69631d10",
+      "method": "GET",
+      "path": "/r/wpr1t6BU",
+      "status_code": 429,
+      "response_time_ms": 1.61,
+      "user_id": null
+    },
+    {
+      "timestamp": "2026-05-01T11:15:20.993Z",
+      "level": "warn",
+      "message": "redirect.rate_limited",
+      "client_ip": "198.51.100.45",
+      "retry_after_seconds": 60,
+      "path": "/r/wpr1t6BU"
+    },
+    {
+      "timestamp": "2026-05-01T11:15:20.994Z",
+      "level": "info",
+      "message": "request.completed",
+      "request_id": "aa6c921c-26dc-433e-88a7-6bfcd17a43e0",
+      "method": "GET",
+      "path": "/r/wpr1t6BU",
+      "status_code": 429,
+      "response_time_ms": 1,
+      "user_id": null
+    },
+    {
+      "timestamp": "2026-05-01T11:15:20.994Z",
+      "level": "warn",
+      "message": "redirect.rate_limited",
+      "client_ip": "198.51.100.45",
+      "retry_after_seconds": 60,
+      "path": "/r/wpr1t6BU"
+    },
+    {
+      "timestamp": "2026-05-01T11:15:20.995Z",
+      "level": "info",
+      "message": "request.completed",
+      "request_id": "34170944-a88a-4bc8-9ff4-170098a88198",
+      "method": "GET",
+      "path": "/r/wpr1t6BU",
+      "status_code": 429,
+      "response_time_ms": 0.73,
+      "user_id": null
+    },
+    {
+      "timestamp": "2026-05-01T11:15:20.995Z",
+      "level": "warn",
+      "message": "redirect.rate_limited",
+      "client_ip": "198.51.100.45",
+      "retry_after_seconds": 60,
+      "path": "/r/wpr1t6BU"
+    },
+    {
+      "timestamp": "2026-05-01T11:15:20.996Z",
+      "level": "info",
+      "message": "request.completed",
+      "request_id": "b824a479-748d-4f39-bc18-2103a9ad96d4",
+      "method": "GET",
+      "path": "/r/wpr1t6BU",
+      "status_code": 429,
+      "response_time_ms": 0.64,
+      "user_id": null
+    },
+    {
+      "timestamp": "2026-05-01T11:15:20.996Z",
+      "level": "warn",
+      "message": "redirect.rate_limited",
+      "client_ip": "198.51.100.45",
+      "retry_after_seconds": 60,
+      "path": "/r/wpr1t6BU"
+    },
+    {
+      "timestamp": "2026-05-01T11:15:20.997Z",
+      "level": "info",
+      "message": "request.completed",
+      "request_id": "7f682ca9-db7b-447b-bb0e-e12c5392d1b4",
+      "method": "GET",
+      "path": "/r/wpr1t6BU",
+      "status_code": 429,
+      "response_time_ms": 0.62,
+      "user_id": null
+    },
+    {
+      "timestamp": "2026-05-01T11:15:20.999Z",
+      "level": "info",
+      "message": "request.completed",
+      "request_id": "eb62aff3-7419-426b-81ed-8e967071dce1",
+      "method": "GET",
+      "path": "/links",
+      "status_code": 400,
+      "response_time_ms": 1.92,
+      "user_id": null
+    },
+    {
+      "timestamp": "2026-05-01T11:15:21.003Z",
+      "level": "info",
+      "message": "request.completed",
+      "request_id": "31e1de66-56bc-4fa0-9ff4-a5db5816f5d9",
+      "method": "GET",
+      "path": "/links/not-a-real-id",
+      "status_code": 404,
+      "response_time_ms": 3.02,
+      "user_id": "tenant-observability"
+    },
+    {
+      "timestamp": "2026-05-01T11:15:21.006Z",
+      "level": "info",
+      "message": "request.completed",
+      "request_id": "ea35dcbd-7b07-431f-b330-2981dbe43831",
+      "method": "GET",
+      "path": "/health",
+      "status_code": 200,
+      "response_time_ms": 1.68,
+      "user_id": null
+    },
+    {
+      "timestamp": "2026-05-01T11:15:21.006Z",
+      "level": "info",
+      "message": "request.completed",
+      "request_id": "e62ba9c2-da58-4190-99e4-b348ee8f2efd",
+      "method": "GET",
+      "path": "/metrics",
+      "status_code": 200,
+      "response_time_ms": 0.37,
+      "user_id": null
+    }
+  ]
+}

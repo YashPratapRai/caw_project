@@ -1,0 +1,10 @@
+HTTP/1.1 302 Found
+X-Powered-By: Express
+Location: https://good.com@evil.example.com/
+Vary: Accept
+Content-Type: text/plain; charset=utf-8
+Content-Length: 56
+Date: Wed, 29 Apr 2026 19:09:53 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+

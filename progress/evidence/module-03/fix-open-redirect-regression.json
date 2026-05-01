@@ -1,0 +1,4 @@
+{
+  "status": 400,
+  "body": "{\"message\":[\"long_url must be a safe http or https URL.\"],\"error\":\"Bad Request\",\"statusCode\":400}"
+}

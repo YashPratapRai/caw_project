@@ -1,0 +1,17 @@
+Module 03 Reflection:
+
+1. Core problem:
+This module solves building a basic API with CRUD operations and a public redirect system.
+
+2. Biggest decision:
+Using /r/:code prefix for redirect to avoid route conflicts with other endpoints.
+
+3. Proof:
+POST /links successfully created a short URL.
+GET /r/:code returned 302 redirect to original URL.
+
+Risk:
+No authentication → anyone can create links.
+
+Mitigation:
+Add user-based access control (x-user-id / auth).

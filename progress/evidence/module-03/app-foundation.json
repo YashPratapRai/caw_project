@@ -1,0 +1,35 @@
+{
+  "module": 3,
+  "artifact": "app_foundation",
+  "evidence": [
+    {
+      "action": "create_link",
+      "request": {
+        "method": "POST",
+        "path": "/links",
+        "headers": {
+          "x-user-id": "test-user-1"
+        },
+        "body": {
+          "long_url": "https://example.com"
+        }
+      },
+      "response": {
+        "status": 201,
+        "code": "NuGSxgdH",
+        "short_url": "http://localhost:3000/r/NuGSxgdH"
+      }
+    },
+    {
+      "action": "redirect",
+      "request": {
+        "method": "GET",
+        "path": "/r/NuGSxgdH"
+      },
+      "response": {
+        "status": 302,
+        "location": "https://example.com/"
+      }
+    }
+  ]
+}

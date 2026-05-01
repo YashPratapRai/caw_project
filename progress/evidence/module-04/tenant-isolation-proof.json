@@ -1,0 +1,23 @@
+{
+  "created_link_owner": "tenant-user-a",
+  "create": {
+    "status": 201,
+    "body": "{\"id\":\"cmolc0jay0002cd9wymrp2ye4\",\"code\":\"d6lp3LZ4\",\"short_url\":\"http://localhost:3000/r/d6lp3LZ4\",\"long_url\":\"https://example.com/tenant-a-only\",\"created_at\":\"2026-04-30T10:19:16.282Z\",\"created_by\":\"tenant-user-a\",\"expires_at\":null,\"tags\":[\"tenant-a\"]}"
+  },
+  "user_a_list": {
+    "status": 200,
+    "body": "[{\"id\":\"cmolc0jay0002cd9wymrp2ye4\",\"code\":\"d6lp3LZ4\",\"long_url\":\"https://example.com/tenant-a-only\",\"created_at\":\"2026-04-30T10:19:16.282Z\",\"created_by\":\"tenant-user-a\",\"expires_at\":null,\"tags\":[\"tenant-a\"]},{\"id\":\"cmolbzpyb0000cd9wif3i08hz\",\"code\":\"6LTA_ejh\",\"long_url\":\"https://example.com/tenant-a-only\",\"created_at\":\"2026-04-30T10:18:38.220Z\",\"created_by\":\"tenant-user-a\",\"expires_at\":null,\"tags\":[\"tenant-a\"]}]"
+  },
+  "user_b_list": {
+    "status": 200,
+    "body": "[]"
+  },
+  "user_b_read_attempt": {
+    "status": 404,
+    "body": "{\"message\":\"Link was not found.\",\"error\":\"Not Found\",\"statusCode\":404}"
+  },
+  "missing_header": {
+    "status": 400,
+    "body": "{\"message\":\"x-user-id header is required.\",\"error\":\"Bad Request\",\"statusCode\":400}"
+  }
+}

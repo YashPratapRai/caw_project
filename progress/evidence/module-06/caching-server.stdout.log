@@ -1,0 +1,28 @@
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +32ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +20ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mHealthController {/health}:[39m[38;5;3m +12ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/health, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLinksController {/links}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/links/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mMetricsController {/metrics}:[39m[38;5;3m +1ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/metrics, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mRedirectController {/r}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/r/:code, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 21576  - [39m05/01/2026, 5:16:33 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +88ms[39m
+{"timestamp":"2026-05-01T11:46:37.280Z","level":"info","message":"request.completed","request_id":"90fd129e-bd2d-44fb-af14-7177b6e76f9f","method":"GET","path":"/health","status_code":200,"response_time_ms":61.25,"user_id":null}
+{"timestamp":"2026-05-01T11:46:52.739Z","level":"info","message":"request.completed","request_id":"6b7d5c15-deb8-4a07-a284-5227de7cea1a","method":"GET","path":"/health","status_code":200,"response_time_ms":5.09,"user_id":null}
+{"timestamp":"2026-05-01T11:47:02.078Z","level":"info","message":"request.completed","request_id":"589ae305-cead-4ef0-8e5e-288d9af30a61","method":"POST","path":"/links","status_code":201,"response_time_ms":46.42,"user_id":"tenant-cache-proof"}
+{"timestamp":"2026-05-01T11:47:02.087Z","level":"info","message":"CACHE_MISS","code":"QHBt5zBd"}
+{"timestamp":"2026-05-01T11:47:02.108Z","level":"info","message":"request.completed","request_id":"296e7b7e-39aa-470e-aa72-19382246e1d5","method":"GET","path":"/r/QHBt5zBd","status_code":302,"response_time_ms":21.93,"user_id":null}
+{"timestamp":"2026-05-01T11:47:02.110Z","level":"info","message":"CACHE_HIT","code":"QHBt5zBd"}
+{"timestamp":"2026-05-01T11:47:02.112Z","level":"info","message":"request.completed","request_id":"7857c81a-dcd5-4ce5-93ee-86bc9b336a7d","method":"GET","path":"/r/QHBt5zBd","status_code":302,"response_time_ms":2.8,"user_id":null}
+{"timestamp":"2026-05-01T11:47:02.114Z","level":"info","message":"CACHE_HIT","code":"QHBt5zBd"}
+{"timestamp":"2026-05-01T11:47:02.116Z","level":"info","message":"request.completed","request_id":"07bc46c8-c0e8-4b51-9d2f-a2ec70a88098","method":"GET","path":"/r/QHBt5zBd","status_code":302,"response_time_ms":2.5,"user_id":null}
+{"timestamp":"2026-05-01T11:47:02.118Z","level":"info","message":"request.completed","request_id":"8fa5c938-35c8-4da8-935e-abe9993359c5","method":"GET","path":"/metrics","status_code":200,"response_time_ms":0.56,"user_id":null}
+{"timestamp":"2026-05-01T11:47:14.492Z","level":"info","message":"request.completed","request_id":"cc18a8bf-c553-47a1-8ae2-43c00fb54f81","method":"GET","path":"/metrics","status_code":200,"response_time_ms":0.96,"user_id":null}
+{"timestamp":"2026-05-01T11:52:04.976Z","level":"info","message":"request.completed","request_id":"14faf49d-d3c3-4f5a-803b-a8936f6103fb","method":"GET","path":"/health","status_code":200,"response_time_ms":343.97,"user_id":null}
