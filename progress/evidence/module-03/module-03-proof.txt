@@ -3,7 +3,10 @@ MODULE_03_PROOF
 APP_FOUNDATION: PRESENT
 
 CREATE_LINK: 201
+- POST /links returned 201 Created with short_url in create-valid-response.json
 REDIRECT: 302
+- GET /r/:code returned 302 Found with Location header in redirect-response.txt
 HEALTH: 200
+- GET /health returned 200 OK with status ok in health-response.txt
 
 STATUS: PASS

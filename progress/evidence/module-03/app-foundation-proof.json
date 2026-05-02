@@ -1,0 +1,36 @@
+{
+  "module": 3,
+  "artifact": "app_foundation",
+  "evidence": [
+    {
+      "action": "create_link",
+      "request": {
+        "method": "POST",
+        "path": "/links"
+      },
+      "response": {
+        "status": 201
+      }
+    },
+    {
+      "action": "redirect",
+      "request": {
+        "method": "GET",
+        "path": "/r/_oyo3LYK"
+      },
+      "response": {
+        "status": 302
+      }
+    },
+    {
+      "action": "health",
+      "request": {
+        "method": "GET",
+        "path": "/health"
+      },
+      "response": {
+        "status": 200
+      }
+    }
+  ]
+}
