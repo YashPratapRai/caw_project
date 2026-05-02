@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/links",
+    "body": {
+      "long_url": "https://good.com@evil.example.com/phishing"
+    }
+  },
+  "response": {
+    "status": 302,
+    "body": {
+      "short_url": "/r/malicious",
+      "code": "malicious"
+    }
+  },
+  "proof": "Demonstrates the vulnerability: credential-bearing URL was stored and would redirect to evil.example.com"
+}

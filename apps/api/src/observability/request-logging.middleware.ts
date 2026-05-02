@@ -29,7 +29,9 @@ export class RequestLoggingMiddleware implements NestMiddleware {
         path: request.originalUrl || request.url,
         status_code: response.statusCode,
         response_time_ms: Number(elapsedMs.toFixed(2)),
-        user_id: getUserId(request),
+        principal_id: request.principal_id || getUserId(request),
+        user_agent: request.get('user-agent'),
+        ip: request.ip,
       });
     });
 

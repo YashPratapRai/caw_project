@@ -1,6 +1,6 @@
 {
   "module": 3,
-  "artifact": "app_foundation",
+  "artifact": "app-foundation",
   "evidence": [
     {
       "action": "create_link",

@@ -1,6 +1,10 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
 import { HealthController } from './health.controller';
 import { PrismaModule } from './prisma/prisma.module';
+import { RateLimitModule } from './rate-limit/rate-limit.module';
 import { LinksController } from './links/links.controller';
 import { LinksService } from './links/links.service';
 import { GlobalExceptionFilter } from './observability/global-exception.filter';
@@ -14,14 +18,16 @@ import { RedirectController } from './redirect/redirect.controller';
 import { RedirectRateLimitService } from './redirect/redirect-rate-limit.service';
 
 @Module({
-  imports: [PrismaModule],
+  imports: [AuthModule, PrismaModule, RateLimitModule],
   controllers: [
+    AppController,
     HealthController,
     LinksController,
     MetricsController,
     RedirectController,
   ],
   providers: [
+    AppService,
     GlobalExceptionFilter,
     HealthService,
     LinksService,

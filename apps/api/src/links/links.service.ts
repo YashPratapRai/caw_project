@@ -207,12 +207,12 @@ export class LinksService {
   private requireCurrentUserId(rawCurrentUserId: string | undefined) {
     const createdBy = rawCurrentUserId?.trim();
     if (!createdBy) {
-      throw new BadRequestException('x-user-id header is required.');
+      throw new BadRequestException('API key authentication is required.');
     }
 
     if (createdBy.length > 128) {
       throw new BadRequestException(
-        'x-user-id header must be 128 characters or fewer.',
+        'Principal ID must be 128 characters or fewer.',
       );
     }
 

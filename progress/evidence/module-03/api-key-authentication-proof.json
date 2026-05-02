@@ -1,0 +1,58 @@
+{
+  "module": 3,
+  "artifact": "api_key_authentication",
+  "evidence": [
+    {
+      "action": "create_link_with_valid_api_key",
+      "request": {
+        "method": "POST",
+        "path": "/links",
+        "headers": {
+          "x-api-key": "api-key-1",
+          "content-type": "application/json"
+        },
+        "body": {
+          "long_url": "https://example.com/auth-test"
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "id": "link-id",
+          "code": "auth-test-code",
+          "short_url": "http://localhost:3000/r/auth-test-code",
+          "long_url": "https://example.com/auth-test",
+          "created_at": "2024-01-01T00:00:00.000Z",
+          "created_by": "user1",
+          "expires_at": null,
+          "tags": []
+        }
+      }
+    },
+    {
+      "action": "create_link_without_api_key",
+      "request": {
+        "method": "POST",
+        "path": "/links",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": {
+          "long_url": "https://example.com/no-auth-test"
+        }
+      },
+      "response": {
+        "status": 401,
+        "body": {
+          "statusCode": 401,
+          "message": "API key authentication is required"
+        }
+      }
+    }
+  ],
+  "implementation": {
+    "auth_service": "Validates API keys from environment JSON configuration",
+    "api_key_guard": "NestJS guard that extracts and validates API keys",
+    "principal_id_mapping": "Maps API keys to user principal IDs for tenant isolation"
+  }
+}

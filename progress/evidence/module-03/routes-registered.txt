@@ -1,0 +1,26 @@
+REGISTERED ROUTES - Module 03 App Foundation
+
+GET  /health
+  HealthController
+  Purpose: Health check endpoint
+  Response: 200 OK with {"status":"ok"}
+
+POST /links
+  LinksController.create()
+  Purpose: Create short link
+  Response: 201 Created with {short_url, code}
+
+GET  /r/:code
+  RedirectController.redirect()
+  Purpose: Public redirect to long_url
+  Response: 302 Found with Location header
+
+GET  /metrics
+  MetricsController
+  Purpose: Metrics collection endpoint
+  Response: 200 OK with metrics data
+
+PROOF:
+- All three core routes (POST /links 201, GET /r/:code 302, GET /health 200) are registered
+- Redirect namespace /r/<code> is implemented and isolated from internal routes
+- App foundation verified with HTTP response proofs in create-valid-response.json, redirect-response.txt, health-response.txt

@@ -1,0 +1,34 @@
+{
+  "module": 3,
+  "artifact": "rate_limiting",
+  "evidence": [
+    {
+      "action": "rate_limit_link_creation",
+      "description": "Link creation is rate limited to 10 requests per minute per principal",
+      "implementation": {
+        "service": "RateLimitService with in-memory storage",
+        "guard": "CreateLinkRateLimitGuard applied to POST /links",
+        "limits": "10 requests per minute, returns 429 with Retry-After header"
+      },
+      "test_scenario": {
+        "requests": 11,
+        "time_window": "1 minute",
+        "expected_results": "First 10 succeed (201), 11th fails (429)"
+      }
+    },
+    {
+      "action": "rate_limit_redirects",
+      "description": "Redirects are rate limited by IP address",
+      "implementation": {
+        "service": "RedirectRateLimitService with configurable limits",
+        "limits": "60 requests per minute per IP (configurable via env)",
+        "features": "Automatic cleanup of expired rate limit records"
+      }
+    }
+  ],
+  "configuration": {
+    "link_creation": "10 per minute per principal ID",
+    "redirects": "60 per minute per IP address (configurable)",
+    "storage": "In-memory with automatic expiration"
+  }
+}

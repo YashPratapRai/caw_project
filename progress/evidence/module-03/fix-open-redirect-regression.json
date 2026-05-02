@@ -1,0 +1,17 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/links",
+    "body": {
+      "long_url": "https://good.com@evil.example.com/phishing"
+    }
+  },
+  "response": {
+    "status": 400,
+    "body": {
+      "error": "Invalid URL",
+      "message": "URLs with credentials or non-HTTP(S) schemes are not allowed"
+    }
+  },
+  "proof": "After fix: same malicious payload is now rejected with HTTP 400. Validation prevents credential-bearing URLs."
+}

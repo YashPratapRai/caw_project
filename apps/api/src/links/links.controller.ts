@@ -9,24 +9,28 @@ import {
   Param,
   Post,
   Req,
+  UseGuards,
 } from '@nestjs/common';
 import type { Request } from 'express';
+import { ApiKeyGuard } from '../auth/api-key.guard';
+import { CreateLinkRateLimitGuard } from '../rate-limit/create-link-rate-limit.guard';
 import { CreateLinkDto } from './dto/create-link.dto';
 import { LinksService } from './links.service';
 
 @Controller('links')
+@UseGuards(ApiKeyGuard)
 export class LinksController {
   constructor(private readonly linksService: LinksService) {}
 
   @Post()
+  @UseGuards(CreateLinkRateLimitGuard)
   async createLink(
     @Body() body: CreateLinkDto,
     @Req() request: Request,
-    @Headers('x-user-id') currentUserId?: string,
     @Headers('x-forwarded-proto') forwardedProto?: string,
     @Headers('x-forwarded-host') forwardedHost?: string,
   ) {
-    const link = await this.linksService.createShortLink(body, currentUserId);
+    const link = await this.linksService.createShortLink(body, request.principal_id);
     const shortUrl = this.linksService.buildShortUrl(
       request,
       link.code,
@@ -47,8 +51,8 @@ export class LinksController {
   }
 
   @Get()
-  async listLinks(@Headers('x-user-id') currentUserId?: string) {
-    const links = await this.linksService.listLinksForOwner(currentUserId);
+  async listLinks(@Req() request: Request) {
+    const links = await this.linksService.listLinksForOwner(request.principal_id);
 
     return links.map((link) => ({
       id: link.id,
@@ -64,9 +68,9 @@ export class LinksController {
   @Get(':id')
   async getLink(
     @Param('id') id: string,
-    @Headers('x-user-id') currentUserId?: string,
+    @Req() request: Request,
   ) {
-    const link = await this.linksService.getLinkByIdForOwner(id, currentUserId);
+    const link = await this.linksService.getLinkByIdForOwner(id, request.principal_id);
 
     return {
       id: link.id,
@@ -83,8 +87,8 @@ export class LinksController {
   @HttpCode(HttpStatus.NO_CONTENT)
   async deleteLink(
     @Param('id') id: string,
-    @Headers('x-user-id') currentUserId?: string,
+    @Req() request: Request,
   ) {
-    await this.linksService.deleteLinkByIdForOwner(id, currentUserId);
+    await this.linksService.deleteLinkByIdForOwner(id, request.principal_id);
   }
 }

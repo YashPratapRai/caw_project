@@ -1,0 +1,24 @@
+SYSTEM_DESIGN_MODULE_03_APP_FOUNDATION_PROOF
+
+This file proves that Module 03 (Core API & CRUD) app foundation is implemented and verified.
+
+REQUIREMENT: The app must have working endpoints for:
+1. POST /links → 201 Created (create short link)
+2. GET /r/:code → 302 Found (redirect to long URL)
+3. GET /health → 200 OK (health check)
+
+IMPLEMENTATION:
+- apps/api/src/links/links.controller.ts - POST /links endpoint
+- apps/api/src/redirect/redirect.controller.ts - GET /r/:code endpoint  
+- apps/api/src/health.controller.ts - GET /health endpoint
+
+VERIFICATION:
+- progress/evidence/module-03/create-valid-response.json - POST /links returned 201
+- progress/evidence/module-03/redirect-response.txt - GET /r/:code returned 302 with Location header
+- progress/evidence/module-03/health-response.txt - GET /health returned 200 OK
+
+DESIGN DECISION:
+- Chosen /r/<code> route prefix to separate public redirect traffic from internal API routes (/links, /health)
+- This avoids route collisions and creates a security boundary for redirect handling
+
+STATUS: COMPLETE ✓

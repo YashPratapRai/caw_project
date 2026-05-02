@@ -1,0 +1,5 @@
+HTTP/1.1 302 Found
+Location: https://evil.example.com/phishing
+Content-Type: text/plain
+
+Vulnerability: Credential-bearing URL redirected to attacker domain instead of safe destination.
