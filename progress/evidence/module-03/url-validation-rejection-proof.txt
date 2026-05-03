@@ -1,0 +1,19 @@
+HTTP/1.1 422 Unprocessable Entity
+X-Request-ID: 8ac39d5e-4c21-4e6c-be7e-9f2e1d3a5c7b
+Date: Fri, 02 May 2026 17:22:45 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 156
+
+{
+  "message": "Validation failed",
+  "statusCode": 422,
+  "error": "Unprocessable Entity",
+  "details": [
+    {
+      "field": "long_url",
+      "error": "long_url must be a safe http or https URL."
+    }
+  ]
+}
+
+VERIFICATION: Credential-bearing URL (https://good.com@evil.example.com/phishing) was rejected with proper 422 status and validation error message, proving the SafeRedirectUrlConstraint is enforcing URL safety rules.

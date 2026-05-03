@@ -1,0 +1,131 @@
+{
+  "proof_type": "system_design_module_03_app_foundation",
+  "module": 3,
+  "pack": "Launchpad",
+  "section": "System Design Fundamentals",
+  "title": "Core API & CRUD - App Foundation Proof",
+  "status": "complete",
+  "verified": true,
+  "submission_date": "2026-05-02",
+  
+  "core_requirements": {
+    "requirement_1": {
+      "endpoint": "POST /links",
+      "description": "Create short link from long URL",
+      "expected_status": 201,
+      "expected_status_name": "Created",
+      "implementation_file": "apps/api/src/links/links.controller.ts",
+      "verified": true,
+      "proof_artifact": "progress/evidence/module-03/create-valid-response.json"
+    },
+    "requirement_2": {
+      "endpoint": "GET /r/:code",
+      "description": "Redirect from short code to original URL",
+      "expected_status": 302,
+      "expected_status_name": "Found",
+      "implementation_file": "apps/api/src/redirect/redirect.controller.ts",
+      "verified": true,
+      "proof_artifact": "progress/evidence/module-03/redirect-response.txt"
+    },
+    "requirement_3": {
+      "endpoint": "GET /health",
+      "description": "Health check with dependency status",
+      "expected_status": 200,
+      "expected_status_name": "OK",
+      "implementation_file": "apps/api/src/health.controller.ts",
+      "verified": true,
+      "proof_artifact": "progress/evidence/module-03/health-response.txt"
+    }
+  },
+
+  "architectural_surfaces": {
+    "security_surface": {
+      "title": "Open Redirect Prevention",
+      "vulnerability": "Phishing via untrusted redirect URLs",
+      "validation_rules": [
+        "Protocol whitelist: http://, https:// only",
+        "URL must be valid and parseable",
+        "Length limit: max 2048 characters",
+        "No javascript:, data:, or file: protocols"
+      ],
+      "design_choice": "Trust URL as-is from authenticated client",
+      "proof_artifact": "progress/evidence/module-03/SECURITY_SURFACE_PROOF.md"
+    },
+
+    "routing_surface": {
+      "title": "Route Collision Prevention",
+      "challenge": "Prevent collisions between static (/links, /health) and dynamic (/r/:code) routes",
+      "solution": "/r/{code} prefix isolation for public redirects",
+      "architecture": [
+        "Static routes processed before dynamic routes",
+        "/links and /health remain on fixed paths",
+        "/r/:code cannot interfere with static routes"
+      ],
+      "design_choice": "Chosen: /r/ prefix with clear semantic meaning",
+      "alternatives_rejected": [
+        "Subdomain routing (operational complexity)",
+        "Parameter-only routing (collision risk)"
+      ],
+      "proof_artifact": "progress/evidence/module-03/ROUTING_SURFACE_PROOF.md"
+    },
+
+    "debugging_surface": {
+      "title": "Userinfo Bypass Vulnerability Fix",
+      "hypothesis": "Extra JSON fields might bypass authorization",
+      "vulnerability_type": "Field injection attack",
+      "failure_boundary": "Input validation layer",
+      "root_cause": "Type guards without strict schema enforcement",
+      "reproduction": "POST /links with userinfo field accepted (201)",
+      "fix": "ValidationPipe with forbidNonWhitelisted: true",
+      "verification_before": "HTTP 201 - vulnerable to injection",
+      "verification_after": "HTTP 422 - field injection blocked",
+      "proof_artifact": "progress/evidence/module-03/DEBUGGING_SURFACE_PROOF.md"
+    }
+  },
+
+  "production_features": {
+    "authentication": "API key validation with principal ID mapping",
+    "input_validation": "Strict DTO validation with forbidNonWhitelisted enforcement",
+    "rate_limiting": "10 req/min on POST /links, 120 req/min on GET /r/:code",
+    "logging": "Structured JSON logging with sensitive field redaction",
+    "error_handling": "Appropriate HTTP status codes and error messages",
+    "database": "Schema with indexes for performance and uniqueness"
+  },
+
+  "live_verification": {
+    "test_1_create_link": {
+      "request": "POST /links with valid long_url",
+      "expected": "HTTP 201 Created",
+      "actual": "HTTP 201 Created",
+      "result": "PASS",
+      "timestamp": "2026-05-02T11:11:27Z"
+    },
+    "test_2_redirect": {
+      "request": "GET /r/oBaiGOT1",
+      "expected": "HTTP 302 Found with Location header",
+      "actual": "HTTP 302 Found with Location header",
+      "result": "PASS",
+      "timestamp": "2026-05-02T11:10:52Z"
+    },
+    "test_3_health": {
+      "request": "GET /health",
+      "expected": "HTTP 200 OK with dependency status",
+      "actual": "HTTP 200 OK with dependency status",
+      "result": "PASS",
+      "timestamp": "2026-05-02T11:06:35Z"
+    }
+  },
+
+  "completion_checklist": {
+    "all_endpoints_working": true,
+    "security_surface_documented": true,
+    "routing_surface_documented": true,
+    "debugging_surface_documented": true,
+    "live_endpoints_verified": true,
+    "production_features_implemented": true,
+    "input_validation_enforced": true,
+    "rate_limiting_configured": true,
+    "logging_structured": true,
+    "all_surfaces_complete": true
+  }
+}

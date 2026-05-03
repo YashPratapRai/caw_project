@@ -1,4 +1,5 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
@@ -18,7 +19,14 @@ import { RedirectController } from './redirect/redirect.controller';
 import { RedirectRateLimitService } from './redirect/redirect-rate-limit.service';
 
 @Module({
-  imports: [AuthModule, PrismaModule, RateLimitModule],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    AuthModule,
+    PrismaModule,
+    RateLimitModule,
+  ],
   controllers: [
     AppController,
     HealthController,

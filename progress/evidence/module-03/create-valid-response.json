@@ -1,4 +1,11 @@
-{
-  "status": 201,
-  "short_url": "http://localhost:3000/r/_oyo3LYK"
-}
+﻿HTTP/1.1 201 Created
+x-request-id: 6b5c600f-1c48-4d6b-a1e1-2cc5f0174059
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 232
+Content-Type: application/json; charset=utf-8
+Date: Sat, 02 May 2026 11:11:27 GMT
+ETag: W/"e8-ZqHsiyyVs/3bMrDtk9GS7kBXeic"
+X-Powered-By: Express
+
+{"id":"cmoo8rche0001cd9cdq61fd1t","code":"oBaiGOT1","short_url":"http://localhost:3000/r/oBaiGOT1","long_url":"https://example.com/test-proof","created_at":"2026-05-02T11:11:27.215Z","created_by":"user1","expires_at":null,"tags":[]}

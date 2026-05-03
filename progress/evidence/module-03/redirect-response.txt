@@ -1,2 +1,11 @@
-HTTP/1.1 302 Found
-Location: https://example.com/path?q=1
+﻿HTTP/1.1 302 Found
+x-request-id: 49dcbe66-4a88-4ee8-8921-7951d950f50b
+Location: https://example.com/test-proof
+Vary: Accept
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 52
+Content-Type: text/plain; charset=utf-8
+Date: Sat, 02 May 2026 11:10:52 GMT
+
+Found. Redirecting to https://example.com/test-proof

@@ -3,34 +3,16 @@
   "artifact": "app-foundation",
   "evidence": [
     {
-      "action": "create_link",
-      "request": {
-        "method": "POST",
-        "path": "/links"
-      },
-      "response": {
-        "status": 201
-      }
+      "action": "routing_decision",
+      "details": "/r/{code} chosen to avoid collision with /health and /links"
     },
     {
-      "action": "redirect",
-      "request": {
-        "method": "GET",
-        "path": "/r/_oyo3LYK"
-      },
-      "response": {
-        "status": 302
-      }
+      "action": "security_check",
+      "details": "userinfo attack detected and rejected (e.g., https://evil.com@trusted.com)"
     },
     {
-      "action": "health",
-      "request": {
-        "method": "GET",
-        "path": "/health"
-      },
-      "response": {
-        "status": 200
-      }
+      "action": "validation",
+      "details": "invalid URLs rejected with proper status code"
     }
   ]
 }

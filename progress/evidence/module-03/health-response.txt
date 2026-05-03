@@ -1,2 +1,11 @@
-HTTP/1.1 200 OK
-{"status":"ok"}
+﻿HTTP/1.1 200 OK
+x-request-id: 8ecba9d1-0266-4d27-9f7c-c16041656dde
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 55
+Content-Type: application/json; charset=utf-8
+Date: Sat, 02 May 2026 11:06:35 GMT
+ETag: W/"37-yT/Cn6AB4r1qV0/U7KD66WwtiT8"
+X-Powered-By: Express
+
+{"status":"ok","dependencies":{"db":"ok","redis":"ok"}}

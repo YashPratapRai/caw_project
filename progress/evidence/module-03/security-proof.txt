@@ -1,0 +1,3 @@
+userinfo bypass fixed
+before: 201 accepted malicious URL
+after: 422 rejected invalid userinfo
