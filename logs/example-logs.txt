@@ -1,0 +1,39 @@
+================================================================================
+LinkOps — Structured Log Examples
+================================================================================
+
+--- Successful Link Creation ---
+{"timestamp":"2026-05-03T10:00:00.123Z","level":"info","message":"request.completed","request_id":"550e8400-e29b-41d4-a716-446655440000","method":"POST","path":"/links","status_code":201,"response_time_ms":12.34,"principal_id":"user1","user_agent":"curl/8.0.1","ip":"::ffff:127.0.0.1"}
+
+--- Successful Redirect (Cache Miss) ---
+{"timestamp":"2026-05-03T10:00:01.456Z","level":"info","message":"CACHE_MISS","code":"aB3kLm9x"}
+{"timestamp":"2026-05-03T10:00:01.468Z","level":"info","message":"request.completed","request_id":"6ba7b810-9dad-11d1-80b4-00c04fd430c8","method":"GET","path":"/r/aB3kLm9x","status_code":302,"response_time_ms":14.56,"principal_id":null,"user_agent":"Mozilla/5.0","ip":"::ffff:192.168.1.100"}
+
+--- Successful Redirect (Cache Hit) ---
+{"timestamp":"2026-05-03T10:00:02.789Z","level":"info","message":"CACHE_HIT","code":"aB3kLm9x"}
+{"timestamp":"2026-05-03T10:00:02.791Z","level":"info","message":"request.completed","request_id":"6ba7b811-9dad-11d1-80b4-00c04fd430c8","method":"GET","path":"/r/aB3kLm9x","status_code":302,"response_time_ms":2.10,"principal_id":null,"user_agent":"Mozilla/5.0","ip":"::ffff:192.168.1.100"}
+
+--- Rate Limited Request (429) ---
+{"timestamp":"2026-05-03T10:00:03.012Z","level":"warn","message":"redirect.rate_limited","client_ip":"192.168.1.200","retry_after_seconds":45,"path":"/r/aB3kLm9x"}
+{"timestamp":"2026-05-03T10:00:03.013Z","level":"error","message":"request.failed","request_id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","method":"GET","path":"/r/aB3kLm9x","status_code":429,"user_id":null,"error":"Too many redirect requests.","exception_name":"HttpException"}
+
+--- Invalid URL Rejection (422) ---
+{"timestamp":"2026-05-03T10:00:04.345Z","level":"error","message":"request.failed","request_id":"a1b2c3d4-e5f6-7890-abcd-ef1234567890","method":"POST","path":"/links","status_code":422,"user_id":null,"error":"long_url must be a safe http or https URL.","exception_name":"BadRequestException"}
+
+--- Authentication Failure (403) ---
+{"timestamp":"2026-05-03T10:00:05.678Z","level":"error","message":"request.failed","request_id":"b2c3d4e5-f6a7-8901-bcde-f12345678901","method":"POST","path":"/links","status_code":403,"user_id":null,"error":"Forbidden resource","exception_name":"ForbiddenException"}
+
+--- Not Found (404) ---
+{"timestamp":"2026-05-03T10:00:06.901Z","level":"error","message":"request.failed","request_id":"c3d4e5f6-a7b8-9012-cdef-123456789012","method":"GET","path":"/r/nonexistent","status_code":404,"user_id":null,"error":"Short code was not found.","exception_name":"NotFoundException"}
+
+--- Database Timeout (504) ---
+{"timestamp":"2026-05-03T10:00:07.234Z","level":"error","message":"request.failed","request_id":"d4e5f6a7-b8c9-0123-def0-1234567890ab","method":"POST","path":"/links","status_code":504,"user_id":"user1","error":"Database operation timed out during create link.","exception_name":"GatewayTimeoutException"}
+
+--- Health Check ---
+{"timestamp":"2026-05-03T10:00:08.567Z","level":"info","message":"request.completed","request_id":"e5f6a7b8-c9d0-1234-ef01-234567890abc","method":"GET","path":"/health","status_code":200,"response_time_ms":3.21,"principal_id":null,"user_agent":"ELB-HealthChecker/2.0","ip":"::ffff:10.0.0.1"}
+
+--- Secret Redaction Example ---
+{"timestamp":"2026-05-03T10:00:09.890Z","level":"info","message":"request.completed","request_id":"f6a7b8c9-d0e1-2345-f012-34567890abcd","method":"POST","path":"/links","status_code":201,"response_time_ms":15.67,"principal_id":"user1","headers":{"x-api-key":"[REDACTED]","content-type":"application/json","authorization":"[REDACTED]"}}
+
+--- Internal Server Error (500) ---
+{"timestamp":"2026-05-03T10:00:10.123Z","level":"error","message":"request.failed","request_id":"a7b8c9d0-e1f2-3456-0123-4567890abcde","method":"POST","path":"/links","status_code":500,"user_id":"user1","error":"Internal server error","exception_name":"TypeError"}

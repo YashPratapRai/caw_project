@@ -7,6 +7,7 @@ import {
   IsNotEmpty,
   IsOptional,
   IsString,
+  MaxLength,
   Length,
   Validate,
   ValidatorConstraint,
@@ -91,6 +92,7 @@ export class CreateLinkDto {
   @Transform(({ value }) => trimString(value))
   @IsString()
   @IsNotEmpty()
+  @MaxLength(2048)
   @Validate(SafeRedirectUrlConstraint)
   long_url!: string;
 

@@ -1,0 +1,5 @@
+Title: Open Redirect Prevention — Credential-Bearing URL Rejection
+Demonstrated: POST /links rejects URLs with embedded credentials at two independent layers, blocking the most dangerous phishing vector a URL shortener can enable.
+Technical detail: SafeRedirectUrlConstraint (DTO) and LinksService.normalizeLongUrl (service) both check parsed.username and parsed.password independently. Two layers because a single-layer check fails silently when a new controller skips DTO validation or when a developer calls LinksService directly from a background job.
+Proof: curl -X POST /links -d '{"long_url":"https://trusted-bank.com@evil.site/login"}' → HTTP 400 {"error":"long_url must not include embedded credentials.","request_id":"...","status":400}
+Reasoning: Without this guard, an attacker creates a short link to https://chase.com@evil.site/login. The victim sees "chase.com" in the URL, clicks, and lands on the attacker's credential harvesting page. The shortener becomes the phishing infrastructure. Blocking at write time (not at redirect time) means zero malicious links exist in the database — there is no window of exploitability.
